@@ -50,14 +50,17 @@ interface Idata {
          }
      function postNewTodo(){
         const newTodo = {
-            text:inpval
+            text: inpval,
+            is_done: true,
         }
         fetch("https://602bf8bf30ba7200172227a8.mockapi.io/todo",{
              method: "POST",
              body : JSON.stringify(newTodo)
         })
         .then((data:any) => data.json())
-       
+       .then(result => { 
+        setTodo(result)
+       })
      }
   return (
     <div>
@@ -69,7 +72,7 @@ interface Idata {
             placeholder="لطفا تو دو را وارد کنید..."
             className="bg-blue-500 w-10/12 h-[30px] outline-none"
           ></input>
-          <button className="w-[30px] h-[30px] ">
+          <button className="w-[30px] h-[30px] " onClick={() => postNewTodo()}>
             <IoIosAddCircle className="w-full h-full text-gray-300" />
           </button>
         </div>
