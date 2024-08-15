@@ -1,7 +1,7 @@
 interface Iprops{
     children :React.ReactNode;
 }
-export default function mainLayout({children}:Iprops){
+export default function MainLayout({children}:Iprops){
     return(
         <div >
             {children}

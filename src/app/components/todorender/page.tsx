@@ -5,7 +5,7 @@ interface ITodoRender {
   id: number;
   habdleDeletButton : Function
 }
-export default function ToDoRender({ text, status, id ,habdleDeletButton }: ITodoRender){
+export default function ToDoRenderPage({ text, status, id ,habdleDeletButton }: ITodoRender){
     // const [todo, setTodo] = useState<IDetailData[]>([]);
     // setTodo(data)
     // function habdleDeletButton(removeId: number) {
